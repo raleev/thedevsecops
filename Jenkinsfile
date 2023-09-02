@@ -28,7 +28,7 @@ pipeline {
             }
           }
         }
-      stage ('Kubernetes Deployment - Dev'){
+      stage ('Kubernetes Deployment - DevEnv'){
           steps {
             withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubeconfig', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
              sh "sed -i 's#replace#studymi/numeric-app:${GIT_COMMIT}#g' k8s_deployment_service.yaml "
