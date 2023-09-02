@@ -62,7 +62,7 @@
           </execution>
         </executions>
       </plugin>
-		</pluginp>
+		</plugin>
 	</build>
 
 </project>
