@@ -10,6 +10,7 @@ pipeline {
         } 
       stage('Unit Tests') {
             steps {
+              # Running the unit tests.
               sh "mvn test"
             }
         } 
