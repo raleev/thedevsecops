@@ -29,7 +29,7 @@ pipeline {
             }
           }
         }
-      stage('Sonar Test') {
+      stage('Sonar Static Test') {
           steps {
             sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric-app -Dsonar.projectName='numeric-app' -Dsonar.host.url=http://10.154.1.197:31200 -Dsonar.token=squ_8767b688500841f46aa30710cd63d0e1abd717fa"
             }
