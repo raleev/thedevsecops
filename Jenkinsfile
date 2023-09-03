@@ -32,8 +32,7 @@ pipeline {
       stage('Sonar - SAAT') {
           steps {
             withSonarQubeEnv('sonar') {
-      	      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric-app -Dsonar.projectName='numeric-app' \
-		          -Dsonar.host.url=http://10.154.1.197:31200"
+      	      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric-app -Dsonar.projectName='numeric-app'"
 		        }
 		      timeout(time: 2, unit: 'MINUTES'){
 			      script{
