@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sonar
+  name: sonar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonar
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: sonar
+    spec:
+      containers:
+        - image: sonarqube:latest
+          name: sonar-container
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: sonar
+  name: sonarsvc
+spec:
+  ports:
+    - port: 9000
+      name: sonar1
+      protocol: TCP
+      targetPort: 9000
+    - port: 9092
+      name: sonar2
+      protocol: TCP
+      targetPort: 9092
+  selector:
+    app: sonar
+  type: NodePort
