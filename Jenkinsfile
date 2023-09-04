@@ -29,7 +29,7 @@ pipeline {
             }
           }
         }
-      stage('Sonar - SAAT') {
+      stage('SonarQube - SAAT') {
           steps {
             withSonarQubeEnv('sonar') {
       	      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric-app -Dsonar.projectName='numeric-app'"
