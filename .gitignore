@@ -27,4 +27,4 @@ bin
 .project
 target
 
-
+.vscode/settings.json
